@@ -108,7 +108,7 @@ const MapSection = () => {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-96 lg:h-full min-h-[400px]">
               {/* Embedded Google Map */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0234567890123!2d72.8977!3d19.0176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAxJzAzLjQiTiA3MsKwNTMnNTEuNyJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d942.759006487361!2d72.90074251060541!3d19.06215359888837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7eaf5ac7701%3A0x2145b64336762e10!2sPlay%20tech!5e0!3m2!1sen!2sin!4v1750862451583!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -142,7 +142,7 @@ const MapSection = () => {
                 Call for Directions
               </a>
               <a
-                href="https://maps.google.com/?q=Chembur+East+Mumbai"
+                href="https://maps.app.goo.gl/26hniovtxLZaHorQ7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-full font-semibold hover:bg-primary-600 hover:text-white transition-all duration-200"

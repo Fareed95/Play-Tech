@@ -14,28 +14,21 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-accent-800">
-      {/* Background Pattern */}
       <div className="absolute inset-0 tech-pattern opacity-20"></div>
-      
-      {/* Animated Background Elements */}
+
+      {/* Floating Blobs */}
       <div className="absolute inset-0">
         <motion.div
-          animate={{ 
-            rotate: 360,
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ 
+          animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+          transition={{
             rotate: { duration: 20, repeat: Infinity, ease: "linear" },
             scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
           }}
           className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-accent-400/20 to-primary-400/20 rounded-full blur-xl"
         />
         <motion.div
-          animate={{ 
-            rotate: -360,
-            scale: [1.2, 1, 1.2]
-          }}
-          transition={{ 
+          animate={{ rotate: -360, scale: [1.2, 1, 1.2] }}
+          transition={{
             rotate: { duration: 25, repeat: Infinity, ease: "linear" },
             scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
           }}
@@ -45,14 +38,13 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+          {/* Left Text Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="text-center lg:text-left"
           >
-            {/* Trust Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,7 +55,6 @@ const Hero = () => {
               <span className="text-white font-medium">Trusted Since 2010</span>
             </motion.div>
 
-            {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,18 +66,16 @@ const Hero = () => {
               Repair Center
             </motion.h1>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl text-gray-200 mb-8 max-w-2xl"
             >
-              Expert repairs for Apple computers, laptops, mobiles & more. 
+              Expert repairs for Apple computers, laptops, mobiles & more.
               Fast turnaround, competitive pricing, and skilled technicians with modern tools.
             </motion.p>
 
-            {/* Rating */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -102,7 +91,6 @@ const Hero = () => {
               <span className="text-gray-300">• 511+ Reviews</span>
             </motion.div>
 
-            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -131,15 +119,38 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Image & Stats */}
+          {/* Right Section - Image and 3 Floating Stat Boxes */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative flex flex-col items-center"
           >
-            {/* Main Image */}
             <div className="relative">
+              {/* Top-right stat box */}
+              {(() => {
+                const Icon = stats[0].icon
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
+                    className="absolute -top-6 -right-6 z-20 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-gradient-to-r from-primary-500 to-accent-500 p-2 rounded-lg">
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-gray-900">{stats[0].value}</div>
+                        <div className="text-sm text-gray-600">{stats[0].label}</div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              })()}
+
+              {/* Image */}
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -154,32 +165,53 @@ const Hero = () => {
                   priority
                 />
               </motion.div>
-              
-              {/* Floating Stats Cards */}
-              {stats.map((stat, index) => (
+
+              {/* Bottom-left stat box */}
+              {(() => {
+                const Icon = stats[2].icon
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1.2, duration: 0.5 }}
+                    className="absolute -bottom-6 -left-6 z-20 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-gradient-to-r from-primary-500 to-accent-500 p-2 rounded-lg">
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-gray-900">{stats[2].value}</div>
+                        <div className="text-sm text-gray-600">{stats[2].label}</div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              })()}
+            </div>
+
+            {/* Below image stat box */}
+            {(() => {
+              const Icon = stats[1].icon
+              return (
                 <motion.div
-                  key={stat.label}
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.8 + index * 0.2, duration: 0.5 }}
-                  className={`absolute bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl ${
-                    index === 0 ? '-top-4 -left-4' :
-                    index === 1 ? '-bottom-4 -right-4' :
-                    'top-1/2 -left-8 transform -translate-y-1/2'
-                  }`}
+                  transition={{ delay: 1, duration: 0.5 }}
+                  className="mt-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl"
                 >
                   <div className="flex items-center space-x-3">
                     <div className="bg-gradient-to-r from-primary-500 to-accent-500 p-2 rounded-lg">
-                      <stat.icon className="h-5 w-5 text-white" />
+                      <Icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                      <div className="text-sm text-gray-600">{stat.label}</div>
+                      <div className="text-2xl font-bold text-gray-900">{stats[1].value}</div>
+                      <div className="text-sm text-gray-600">{stats[1].label}</div>
                     </div>
                   </div>
                 </motion.div>
-              ))}
-            </div>
+              )
+            })()}
           </motion.div>
         </div>
       </div>

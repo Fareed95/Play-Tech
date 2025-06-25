@@ -196,7 +196,7 @@ const Footer = () => {
             <div className="text-gray-400 text-sm">
               Designed & Developed by{' '}
               <a
-                href="https://crodlin.com"
+                href="https://crodlin.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-400 hover:text-primary-300 font-semibold transition-colors duration-200"

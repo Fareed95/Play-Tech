@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import ClickTrackerProvider from './context/ClickTrackerProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,10 +41,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ClickTrackerProvider>
         <Navbar />
         <main>{children}</main>
         <Footer />
         <WhatsAppFloat />
+        </ClickTrackerProvider>
       </body>
     </html>
   )

@@ -49,26 +49,39 @@ const PoweredBy = () => {
             empowering businesses with smart tech solutions.
           </motion.p>
 
-          {/* Features */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8"
-          >
-            <div className="flex items-center space-x-2 text-gray-300">
-              <Code className="h-5 w-5 text-primary-400" />
-              <span>Modern Web Development</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-300">
-              <Smartphone className="h-5 w-5 text-accent-400" />
-              <span>Mobile-First Design</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-300">
-              <Lightbulb className="h-5 w-5 text-yellow-400" />
-              <span>Smart Solutions</span>
-            </div>
-          </motion.div>
+          {/* Features Grid */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.8, delay: 0.5 }}
+  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6 text-left max-w-4xl mx-auto"
+>
+  <div className="flex items-center space-x-3 text-gray-300">
+    <Code className="h-5 w-5 text-primary-400" />
+    <span>Modern Web Development</span>
+  </div>
+  <div className="flex items-center space-x-3 text-gray-300">
+    <Smartphone className="h-5 w-5 text-accent-400" />
+    <span>Mobile-First Design</span>
+  </div>
+  <div className="flex items-center space-x-3 text-gray-300">
+    <Lightbulb className="h-5 w-5 text-yellow-400" />
+    <span>Smart Tech Solutions</span>
+  </div>
+  <div className="flex items-center space-x-3 text-gray-300">
+    <Code className="h-5 w-5 text-green-400" />
+    <span>CRM / ERP Systems</span>
+  </div>
+  <div className="flex items-center space-x-3 text-gray-300">
+    <Lightbulb className="h-5 w-5 text-purple-400" />
+    <span>SaaS Platform Development</span>
+  </div>
+  <div className="flex items-center space-x-3 text-gray-300">
+    <Smartphone className="h-5 w-5 text-pink-400" />
+    <span>SEO & Digital Optimization</span>
+  </div>
+</motion.div>
+
 
           {/* CTA */}
           <motion.div
@@ -78,7 +91,7 @@ const PoweredBy = () => {
             className="mt-8"
           >
             <a
-              href="https://crodlin.com"
+              href="https://crodlin.in"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-primary-600 to-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
